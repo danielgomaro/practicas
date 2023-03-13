@@ -1,0 +1,12 @@
+mat-slider {
+  width: 250px;
+}
+mat-chip:hover{
+  background-color: #59c3ef;
+}
+mat-chip{
+  background-color: #ffffff;
+}
+
+
+

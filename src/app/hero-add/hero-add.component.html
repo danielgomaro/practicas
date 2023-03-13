@@ -1,1 +1,10 @@
-<p>hero-add works!</p>
+<div>
+  <h2>Create a new Hero</h2>
+  <label for="new-hero">Hero name: </label>
+  <input id="new-hero" #heroName />
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button type="button" class="add-button" (click)="add(heroName.value); heroName.value='';">
+    Add hero
+  </button>
+</div>

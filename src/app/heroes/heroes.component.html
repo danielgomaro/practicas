@@ -1,1 +1,18 @@
-<p>heroes works!</p>
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes | paginate: {itemsPerPage: 5, currentPage: page}">
+    <a routerLink="/detail/{{hero.id}}">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </a>
+    <button type="button" class="delete" title="delete hero"
+            (click)="delete(hero)">x</button>
+  </li>
+</ul>
+<pagination-controls
+  (pageChange)="page = $event"
+  previousLabel=""
+  nextLabel="">
+</pagination-controls>
+<br>
+
+

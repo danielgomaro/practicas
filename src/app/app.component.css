@@ -1,0 +1,59 @@
+/* AppComponent's private CSS styles */
+h1 {
+  margin-bottom: 20px;
+}
+nav a {
+  padding: 1rem;
+  height: 20px;
+  text-decoration: none;
+  margin-top: 10px;
+  margin-right: 20px;
+  display: inline-block;
+  color: #3d3d3d;
+  border-radius: 4px;
+}
+
+nav a:hover {
+  color: white;
+}
+nav a:active {
+  background-color: #57717c;
+}
+.content{
+  display: grid;
+  grid-template-rows: repeat(2, 0em);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+.header{
+  grid-area: 1 / 1 / 2 / 6;
+}
+
+.main{
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: #dedede;
+  grid-area: 2 / 1 / 4 / 4;
+  margin-left: 5em;
+}
+.message{
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: #dedede;
+  grid-area: 2 / 4 / 4 / 6;
+  margin-right: 5em;
+}
+nav a:nth-last-of-type(1){
+  height: 40px;
+  padding: 6px;
+}
+mat-toolbar{
+  display: flex;
+  justify-content: flex-end;
+}
+.vacio{
+  width: 100%;
+  height: 1000px;
+}

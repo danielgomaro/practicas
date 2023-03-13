@@ -1,1 +1,38 @@
-<p>hero-detail works!</p>
+<div *ngIf="hero">
+
+  <h2>{{hero.name | uppercase}} Details</h2>
+  <div><p>id: {{hero.id}}</p></div>
+  <div>
+    <label for="hero-name">Hero name: </label>
+    <input id="hero-name" [(ngModel)]="hero.name" placeholder="name">
+    <div><button mat-raised-button matBadge="{{hero.power}}"
+                 matBadgeSize="large"
+                 [matBadgeHidden]="hidden"
+                 (click)="toggleBadgeVisibility()">Power<mat-icon>offline_bolt</mat-icon></button>
+
+    <mat-slider min="0" max="99" step="1"  showTickMarks  discrete [displayWith]="formatLabel">
+      <input matSliderThumb class="slider" [(ngModel)]="hero.power">
+    </mat-slider>
+    </div>
+    <p>Hero's Abilities:</p>
+    <mat-chip-set
+      class="example-chip"
+      cdkDropList
+      cdkDropListOrientation="horizontal"
+      (cdkDropListDropped)="drop()">
+      <mat-chip
+        class="example-box"
+        cdkDrag>
+        {{hero.ability}}
+      </mat-chip>
+      <mat-chip
+        class="example-box"
+        cdkDrag>
+        {{hero.ability2}}
+      </mat-chip>
+    </mat-chip-set>
+  </div>
+  <button type="button" (click)="goBack()">Go Back</button>
+  <button type="button" (click)="save()">Save</button>
+</div>
+
